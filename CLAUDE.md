@@ -72,6 +72,10 @@ See [README.md](README.md) for the full architecture diagram.
 
 See [docs/setup-guide.md](docs/setup-guide.md) for the complete beginner setup walkthrough.
 
+## Session Bootstrap Prompt
+
+See [docs/session-bootstrap-prompt.md](docs/session-bootstrap-prompt.md) for a copy-paste prompt that gives any AI tool (Claude, ChatGPT, Cursor) instant full context on Cici and BrewMind.
+
 ## Governed State (Phase 1)
 
 This repo now has a file-based governed-state layer. Key locations:
@@ -108,6 +112,8 @@ These commands live in `.claude/commands/` and can be invoked with `/`:
 | `/promote-to-governed-state <proposal-id>` | Apply an approved proposal to the correct surface |
 | `/stage-evidence [tag]` | Stage Supabase export into evidence/ and prepared-context/ |
 | `/memory-audit` | Run a full pipeline and Tier C leak audit |
+| `/self-improve` | Run a behavioral self-improvement cycle — identifies gaps in how Cici acts and proposes concrete changes |
+| `/weekly-review` | Run the weekly synthesis ritual — reads journal entries, surfaces BrewMind open loops, and prompts for knowledge worth capturing into memory |
 
 ## Available Agents
 
@@ -118,6 +124,21 @@ These agents live in `.claude/agents/` and can be invoked via the Agent tool:
 | `proposal-reviewer` | Read-only | Evaluates queued proposals; flags issues |
 | `evidence-stager` | Read + Write (evidence/ + prepared-context/ only) | Stages and synthesizes evidence |
 | `memory-auditor` | Read-only | Monthly hygiene audit; finds Tier C leaks |
+| `dev-hygiene` | Read + Write + Bash | Doctor check, batch workers, mode checklists — one command for repo health |
+| `self-improver` | Read + Write + Bash | Behavioral self-improvement cycle — reviews Cici's own instructions and proposes improvements |
+
+## Agent Modes
+
+Thin checklists for focused passes. Live in `.claude/modes/`; do not duplicate CLAUDE.md.
+
+| Mode file | When to use |
+|---|---|
+| `_shared.md` | Always-true context (paths, owner, no-secrets) — referenced by other modes |
+| `batch-ingest.md` | Processing multiple `prepared-context/` files in one bounded pass |
+| `proposal-review.md` | Focused pass over `proposals/queue/` (evaluate, not apply) |
+| `docsync-pass.md` | Docs-only updates: stale links, path refs, header sync |
+
+_Routines inspired by [career-ops](https://github.com/santifer/career-ops) layout (external reference; not a dependency)._
 
 ## Common Errors (Do Not Repeat)
 
