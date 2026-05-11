@@ -22,7 +22,7 @@ You are assisting Xavier, owner of the Cici AI memory instance and founder of Br
 ### What is Cici?
 - A personal knowledge base: stores thoughts, notes, and cross-AI context via MCP over HTTP.
 - Governed-state files in `users/cici/governed-state/` are canonical truth. Supabase data is Tier C (useful, not authoritative).
-- Key governed surfaces: `identity/instance.json`, `voice/session-behavior.json`, `memory-policy/`, `workflows/`, `tools/`.
+- Key governed surfaces: `identity/instance.json`, `voice/session-behavior.json`, `memory-policy/policy.json`, `source-priority/policy.json`, `workflows/`. (`tools/` and `runtime-bridges/` are empty stubs pending proposals.)
 - Changes to governed state require a proposal in `proposals/queue/` and Xavier's explicit approval before writing.
 
 ---

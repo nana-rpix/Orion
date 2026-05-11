@@ -80,13 +80,13 @@ disagree, the governed-state doc wins.
 
 ```
 users/cici/governed-state/
-├── identity/        instance.json      — who/what/why this system is
-├── voice/           session-behavior.json — operator interaction rules
-├── memory-policy/   capture-rules.json — what to store, dedup, retention
-├── tools/           mcp-config.json    — MCP tool preferences
-├── workflows/       recurring-flows.json — rituals and session routines
-├── source-priority/ trust-levels.json  — evidence tier rules
-└── runtime-bridges/ supabase-policy.json — how Supabase integrates
+├── identity/        instance.json                        — who/what/why this system is
+├── voice/           session-behavior.json                — operator interaction rules
+├── memory-policy/   policy.json + retention-policy.md   — capture rules, dedup, retention
+├── tools/           (stub — empty, pending proposals)    — MCP tool preferences
+├── workflows/       brewmind-companion-contract-ref.json — rituals and session routines
+├── source-priority/ policy.json                         — 5-tier source trust hierarchy
+└── runtime-bridges/ (stub — empty, pending proposals)   — Supabase sync and back-propagation
 ```
 
 ---

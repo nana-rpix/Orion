@@ -48,6 +48,38 @@ Every connected AI has access to these four MCP tools:
 
 ---
 
+### Capture durability — transient vs. persistent
+
+Every capture has a durability class that controls how long it lives. **If you don't specify one, it defaults to `transient` — which expires in 7 days.**
+
+| Class | Retention | Use for |
+|---|---|---|
+| `transient` | 7 days, then auto-archived | One-off lookups, session scaffolding, exploratory notes with no recurring relevance |
+| `persistent` | 90 days, eligible for long-term synthesis | Decisions, active projects, habits, BrewMind context, anything you want to build on |
+
+**Always specify `persistent` for anything you want to keep.** Example: "Decided to lead the BrewMind homepage with the learning angle. [persistent] [#decision #brewmind]"
+
+---
+
+### Tag your captures
+
+Tags make search dramatically more precise. Use these canonical tags:
+
+| Tag | Use for |
+|---|---|
+| `#habit` | Health, fitness, nutrition tracking |
+| `#project` | Active project context, decisions, blockers |
+| `#decision` | Explicit decisions Xavier made (not model suggestions) |
+| `#insight` | Reflections worth retaining across sessions |
+| `#preference` | Working style, personal preference |
+| `#brewmind` | BrewMind project, partners, business context |
+| `#health` | Health-related thoughts (non-habit) |
+| `#work` | Professional/technical work unrelated to BrewMind |
+
+Multiple tags are fine: `[#decision #brewmind]`. Unknown tags are flagged for review — don't invent new ones without checking the taxonomy.
+
+---
+
 ### How to capture thoughts well
 
 Good captures are specific, self-contained, and tagged with enough context to
