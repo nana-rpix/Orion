@@ -14,6 +14,18 @@ A personal instance of [Open Brain (OB1)](https://github.com/NateBJones-Projects
 
 ---
 
+## Goals
+
+This instance has moved beyond initial setup. The current focus is:
+
+- **Reproducibility** — every configuration, schema change, and deployment step is documented and version-controlled so the full system can be rebuilt from this repo alone.
+- **Transparency** — all durable decisions about memory, governed state, and AI behavior flow through the proposal → review → approval pipeline, leaving a clear audit trail.
+- **Benchmarking** — track signal quality over time: search relevance, deduplication accuracy, embedding drift, and how well retrieved context actually helps AI tools answer questions about Xavier and BrewMind.
+
+Setup is a solved problem. The work now is making the system *trustworthy and measurable*.
+
+---
+
 ## What Is Open Brain?
 
 Open Brain is not a notes app. It is an **infrastructure layer for thinking** — a PostgreSQL database with vector search and an open protocol on top. When you capture a thought through any connected AI, it lands here. When you ask an AI a question, it searches here for context about you.
